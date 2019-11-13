@@ -1,0 +1,39 @@
+{
+    "notes": [
+        {
+            "title": "Do home work",
+            "date": "",
+            "body": "When get home first do your homework",
+            "author": "Mark",
+            "status": "done"
+        },
+        {
+            "title": "Walk the dog",
+            "date": "",
+            "body": "After finishing your homework walk the dog",
+            "author": "Mark",
+            "status": "done"
+        },
+        {
+            "title": "Go to gym",
+            "date": "",
+            "body": "Atleast one hour exercise",
+            "author": "Mark",
+            "status": "not done"
+        },
+        {
+            "title": "Learn React and Redux",
+            "date": "",
+            "body": "In the Evening make application and learn new concepets",
+            "author": "Mark",
+            "status": "not done"
+        },
+        {
+            "title": "Make YouTube video",
+            "date": "",
+            "body": "Prepare materials for making video for this week",
+            "author": "Mark",
+            "status": "not done"
+        }
+    ]
+}
