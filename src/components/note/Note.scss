@@ -1,0 +1,9 @@
+.note {
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    padding: 5px;
+
+    &:hover {
+        background-color: #ccc;
+    }
+}

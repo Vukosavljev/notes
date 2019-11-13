@@ -1,9 +1,12 @@
 import React from 'react';
+import './Note.scss';
 
-const Note = () => {
+const Note = ({note}) => {
+    const {title, date, content} = note;
+
     return (
-        <div>
-            asdf
+        <div className="note">
+            {title}
         </div>
     );
 }
