@@ -2,11 +2,12 @@ import React from 'react';
 import './Note.scss';
 
 const Note = ({note}) => {
-    const {title, date, content} = note;
+    const {title, date} = note;
 
     return (
         <div className="note">
-            {title}
+            <div>{title}</div>
+            <div>{date}</div>
         </div>
     );
 }

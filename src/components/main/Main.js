@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Note from '../note/Note';
-
-import './Main.scss';
 import AddNote from '../addNote/AddNote';
 import AddButton from '../addButton/AddButton';
+import './Main.scss';
 
 const Main = () => {
     const [notesState, setNotes] = useState({ notes: []});
@@ -20,6 +19,10 @@ const Main = () => {
             .catch(err => console.log('Something went wrong', err))
     }, []);
 
+    function onAddNote() {
+        console.log('add')     
+    }
+
     const displayNotes =  notesState.notes.map(note =>  <Note key={note.date} note={note} />)
 
     return (
@@ -29,9 +32,7 @@ const Main = () => {
                 <AddButton toggleModal={onToggleModal} />
             </div>
 
-            {
-                showModal ? <AddNote toggleModal={onToggleModal} /> : null
-            }
+            { showModal ? <AddNote toggleModal={onToggleModal} addNote={onAddNote}  /> : null }
         </main>
     );
 }
