@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Note = ({title, date, body, author, status}) => {
+const Note = () => {
     return (
         <div>
-            {title}
+            asdf
         </div>
     );
 }
