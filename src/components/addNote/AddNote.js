@@ -23,6 +23,14 @@ const AddNote = ({toggleModal, addNote}) => {
 
     function submitNote(e) {
         e.preventDefault();
+        
+        addNote({
+            title,
+            content,
+            author,
+            date: new Date().toLocaleDateString(),
+        });
+        toggleModal();
     }
 
     return (
@@ -58,7 +66,8 @@ const AddNote = ({toggleModal, addNote}) => {
                     </div>
                     <button 
                         type="submit"
-                        onClick={submitNote} 
+                        onClick={submitNote}
+                        disabled={ !(author && content && author) } 
                         className="btn btn-block btn-info">
                         Save Note
                     </button>
