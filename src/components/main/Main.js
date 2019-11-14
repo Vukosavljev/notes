@@ -3,17 +3,15 @@ import Note from '../note/Note';
 import AddNote from '../addNote/AddNote';
 import AddButton from '../addButton/AddButton';
 import Search from '../search/Search';
+import Sort from '../sort/Sort';
 import './Main.scss';
 
 const Main = () => {
     const [notesState, setNotesState] = useState([]);
     const [displayNotes, setDisplayNotes] = useState([]);
     const [showModal, setShowModal] = useState(false);
-    const [sort, setSort] = useState('');
 
-    function onToggleModal() {
-       setShowModal(!showModal)
-    }
+    const onToggleModal = () => setShowModal(!showModal);
     
     useEffect(() => {
         fetch('http://localhost:3000/notes')
@@ -44,7 +42,10 @@ const Main = () => {
     
     return (
         <main className="main-container">
-            <Search onFilter={filterNotes} />
+            <div className="d-flex justify-content-md-between">
+                <Search onFilter={filterNotes} />
+                <Sort />
+            </div>
 
             { displayNotes.map(note =>  <Note key={note.title} note={note} />) }
 
