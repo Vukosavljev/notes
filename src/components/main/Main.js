@@ -27,11 +27,10 @@ const Main = () => {
     }, []);
 
     useEffect(() => {
-        console.log(sort)
         const newSortedNotes = sorter(displayNotes, sort, notesState);
         console.log(newSortedNotes)
         setDisplayNotes(newSortedNotes);
-    }, [sort]);
+    }, [sort, displayNotes, notesState]);
 
     function onAddNote(newNote) {
         const allNotes = [...notesState, newNote]; 
