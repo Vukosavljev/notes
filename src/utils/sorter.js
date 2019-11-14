@@ -5,7 +5,7 @@ const sorter = (dispalyedNotes, order, originalNotes) => {
         const dateA = new Date(a.date).getTime();
         const dateB = new Date(b.date).getTime();
 
-        return (order === 'ascending') ? dateB - dateA : dateA - dateB;
+        return (order === 'ascending') ? dateA - dateB : dateB - dateA;
     });
 }
 
