@@ -4,7 +4,7 @@ const Sort = ({ sortNotes }) => {
     const [select, setSelect] = useState('');
     const setDropDown = e => {
         setSelect(e.target.value);
-        sortNotes(select);
+        sortNotes(e.target.value);
     }
 
     return (

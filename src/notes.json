@@ -2,35 +2,35 @@
     "notes": [
         {
             "title": "Do home work",
-            "date": "05/11/2019",
+            "date": "05/11/2010",
             "body": "When get home first do your homework",
             "author": "Mark",
             "status": "done"
         },
         {
             "title": "Walk the dog",
-            "date": "04/11/2019",
+            "date": "04/11/2007",
             "body": "Minimum for 2 hours walk the dog",
             "author": "Mark",
             "status": "done"
         },
         {
             "title": "Go to gym",
-            "date": "10/11/2019",
+            "date": "10/11/2015",
             "body": "Atleast one hour exercise",
             "author": "Mark",
             "status": "not done"
         },
         {
             "title": "Learn React and Redux",
-            "date": "01/10/2019",
+            "date": "01/10/2016",
             "body": "In the Evening make application and learn new concepets",
             "author": "Mark",
             "status": "not done"
         },
         {
             "title": "Make YouTube video",
-            "date": "20/10/2019",
+            "date": "10/10/2012",
             "body": "Prepare materials for making video for this week",
             "author": "Mark",
             "status": "not done"

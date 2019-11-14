@@ -4,14 +4,17 @@ import AddNote from '../addNote/AddNote';
 import AddButton from '../addButton/AddButton';
 import Search from '../search/Search';
 import Sort from '../sort/Sort';
+import sorter from '../../utils/sorter';
 import './Main.scss';
 
 const Main = () => {
     const [notesState, setNotesState] = useState([]);
     const [displayNotes, setDisplayNotes] = useState([]);
+    const [sort, setSort] = useState('default');
     const [showModal, setShowModal] = useState(false);
 
     const onToggleModal = () => setShowModal(!showModal);
+    const setSortHook = order => setSort(order);
     
     useEffect(() => {
         fetch('http://localhost:3000/notes')
@@ -22,6 +25,13 @@ const Main = () => {
             })
             .catch(err => console.log('Something went wrong', err))
     }, []);
+
+    useEffect(() => {
+        console.log(sort)
+        const newSortedNotes = sorter(displayNotes, sort, notesState);
+        console.log(newSortedNotes)
+        setDisplayNotes(newSortedNotes);
+    }, [sort]);
 
     function onAddNote(newNote) {
         const allNotes = [...notesState, newNote]; 
@@ -38,20 +48,12 @@ const Main = () => {
         setDisplayNotes(filNotes);
     }
     
-    function sortNotes(order) {
-        const sortedNotes = notesState.sort((a, b) => {
-            const dateA = new Date(a.date);
-            const dateB = new Date(b.date);
-            return dateB - dateA;
-        });
-        setDisplayNotes(sortedNotes);
-    }    
     
     return (
         <main className="main-container">
             <div className="d-flex justify-content-between">
                 <Search onFilter={filterNotes} />
-                <Sort sortNotes={sortNotes} />
+                <Sort sortNotes={setSortHook} />
             </div>
 
             { displayNotes.map(note =>  <Note key={note.title} note={note} />) }
