@@ -34,17 +34,24 @@ const Main = () => {
             setDisplayNotes(notesState);
             return;
         }
-        const filNotes = notesState.filter(note => 
-             note.title.toLowerCase().startsWith(value.toLowerCase()));
+        const filNotes = notesState.filter(note => note.title.toLowerCase().startsWith(value.toLowerCase()));
         setDisplayNotes(filNotes);
     }
     
+    function sortNotes(order) {
+        const sortedNotes = notesState.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA;
+        });
+        setDisplayNotes(sortedNotes);
+    }    
     
     return (
         <main className="main-container">
-            <div className="d-flex justify-content-md-between">
+            <div className="d-flex justify-content-between">
                 <Search onFilter={filterNotes} />
-                <Sort />
+                <Sort sortNotes={sortNotes} />
             </div>
 
             { displayNotes.map(note =>  <Note key={note.title} note={note} />) }

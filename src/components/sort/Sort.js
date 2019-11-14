@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-const Sort = () => {
+const Sort = ({ sortNotes }) => {
     const [select, setSelect] = useState('');
     const setDropDown = e => {
         setSelect(e.target.value);
-        console.log(e.target.value)
+        sortNotes(select);
     }
 
     return (
